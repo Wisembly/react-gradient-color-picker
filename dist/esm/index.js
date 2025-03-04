@@ -1,5 +1,4 @@
 import { ColorPicker } from './components/index.js';
-import Dropper from './components/EyeDropper.js';
 export { useColorPicker } from './hooks/useColorPicker.js';
-export { Dropper };
+export { useDropper } from './hooks/useDropper.js';
 export default ColorPicker;
