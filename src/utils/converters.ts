@@ -1,3 +1,5 @@
+import tc from 'tinycolor2'
+
 export function rgb2cmyk(r: number, g: number, b: number) {
   let computedC = 0
   let computedM = 0
@@ -73,4 +75,12 @@ export const getHexAlpha = (opacityPercent: number): string => {
     .toString(16)
     .padStart(2, '0')
     .toUpperCase()
+}
+
+export const convertHexToRgb = (hex: string, opacity: number) => {
+  const tinyHex = tc(hex)
+  if (tinyHex.isValid()) {
+    const { r, g, b } = tinyHex.toRgb()
+    return `rgba(${r}, ${g}, ${b}, ${opacity})`
+  }
 }

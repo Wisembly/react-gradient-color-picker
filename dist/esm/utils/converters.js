@@ -1,3 +1,4 @@
+import tc from 'tinycolor2';
 export function rgb2cmyk(r, g, b) {
     var computedC = 0;
     var computedM = 0;
@@ -51,4 +52,11 @@ export var getHexAlpha = function (opacityPercent) {
         .toString(16)
         .padStart(2, '0')
         .toUpperCase();
+};
+export var convertHexToRgb = function (hex, opacity) {
+    var tinyHex = tc(hex);
+    if (tinyHex.isValid()) {
+        var _a = tinyHex.toRgb(), r = _a.r, g = _a.g, b = _a.b;
+        return "rgba(".concat(r, ", ").concat(g, ", ").concat(b, ", ").concat(opacity, ")");
+    }
 };

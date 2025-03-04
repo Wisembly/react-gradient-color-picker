@@ -1,7 +1,11 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getHexAlpha = exports.cmykToRgb = void 0;
+exports.convertHexToRgb = exports.getHexAlpha = exports.cmykToRgb = void 0;
 exports.rgb2cmyk = rgb2cmyk;
+var tinycolor2_1 = __importDefault(require("tinycolor2"));
 function rgb2cmyk(r, g, b) {
     var computedC = 0;
     var computedM = 0;
@@ -58,3 +62,11 @@ var getHexAlpha = function (opacityPercent) {
         .toUpperCase();
 };
 exports.getHexAlpha = getHexAlpha;
+var convertHexToRgb = function (hex, opacity) {
+    var tinyHex = (0, tinycolor2_1.default)(hex);
+    if (tinyHex.isValid()) {
+        var _a = tinyHex.toRgb(), r = _a.r, g = _a.g, b = _a.b;
+        return "rgba(".concat(r, ", ").concat(g, ", ").concat(b, ", ").concat(opacity, ")");
+    }
+};
+exports.convertHexToRgb = convertHexToRgb;

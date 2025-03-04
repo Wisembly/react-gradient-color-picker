@@ -15,3 +15,4 @@ export declare const cmykToRgb: ({ c, m, y, k, }: {
     b: number;
 };
 export declare const getHexAlpha: (opacityPercent: number) => string;
+export declare const convertHexToRgb: (hex: string, opacity: number) => string | undefined;
