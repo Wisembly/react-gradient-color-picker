@@ -18,7 +18,7 @@ import EyeDropper from './EyeDropper.js';
 import AdvancedControls from './AdvancedControls.js';
 import ComparibleColors from './ComparibleColors.js';
 import GradientControls from './GradientControls.js';
-import { colorTypeBtnStyles, controlBtnStyles, modalBtnStyles } from '../styles/styles.js';
+import { colorTypeBtnStyles, controlBtnStyles, modalBtnStyles, } from '../styles/styles.js';
 var ColorTypeBtns = function (_a) {
     var _b, _c;
     var hideColorTypeBtns = _a.hideColorTypeBtns, setGradient = _a.setGradient, isGradient = _a.isGradient, setSolid = _a.setSolid, locales = _a.locales;
@@ -61,7 +61,7 @@ var InputTypeDropdown = function (_a) {
 };
 var Controls = function (_a) {
     var _b, _c;
-    var locales = _a.locales, _d = _a.hideEyeDrop, hideEyeDrop = _d === void 0 ? false : _d, _e = _a.hideAdvancedSliders, hideAdvancedSliders = _e === void 0 ? false : _e, _f = _a.hideColorGuide, hideColorGuide = _f === void 0 ? false : _f, _g = _a.hideInputType, hideInputType = _g === void 0 ? false : _g, _h = _a.hideColorTypeBtns, hideColorTypeBtns = _h === void 0 ? false : _h, _j = _a.hideGradientControls, hideGradientControls = _j === void 0 ? false : _j, _k = _a.hideGradientType, hideGradientType = _k === void 0 ? false : _k, _l = _a.hideGradientAngle, hideGradientAngle = _l === void 0 ? false : _l, _m = _a.hideGradientStop, hideGradientStop = _m === void 0 ? false : _m;
+    var locales = _a.locales, _d = _a.hideEyeDrop, hideEyeDrop = _d === void 0 ? false : _d, _e = _a.hideAdvancedSliders, hideAdvancedSliders = _e === void 0 ? false : _e, _f = _a.hideColorGuide, hideColorGuide = _f === void 0 ? false : _f, _g = _a.hideInputType, hideInputType = _g === void 0 ? false : _g, _h = _a.hideColorTypeBtns, hideColorTypeBtns = _h === void 0 ? false : _h, _j = _a.hideGradientControls, hideGradientControls = _j === void 0 ? false : _j, _k = _a.hideGradientType, hideGradientType = _k === void 0 ? false : _k, _l = _a.hideGradientAngle, hideGradientAngle = _l === void 0 ? false : _l, _m = _a.hideGradientStop, hideGradientStop = _m === void 0 ? false : _m, CustomGradientControls = _a.CustomGradientControls;
     var _o = usePicker(), config = _o.config, onChange = _o.onChange, isGradient = _o.isGradient, handleChange = _o.handleChange, previous = _o.previous, defaultStyles = _o.defaultStyles, pickerIdSuffix = _o.pickerIdSuffix;
     var defaultColor = config.defaultColor, defaultGradient = config.defaultGradient;
     var _p = useState(false), openComparibles = _p[0], setOpenComparibles = _p[1];
@@ -112,6 +112,7 @@ var Controls = function (_a) {
                         React.createElement(InputTypeDropdown, { openInputType: openInputType, setOpenInputType: setOpenInputType })))))),
             !hideAdvancedSliders && (React.createElement(AdvancedControls, { openAdvanced: openAdvanced })),
             !hideColorGuide && (React.createElement(ComparibleColors, { openComparibles: openComparibles })),
+            CustomGradientControls && React.createElement(CustomGradientControls, null),
             isGradient && !hideGradientControls && (React.createElement(GradientControls, { hideGradientType: hideGradientType, hideGradientAngle: hideGradientAngle, hideGradientStop: hideGradientStop }))));
     }
 };

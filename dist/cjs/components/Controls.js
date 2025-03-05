@@ -89,7 +89,7 @@ var InputTypeDropdown = function (_a) {
 };
 var Controls = function (_a) {
     var _b, _c;
-    var locales = _a.locales, _d = _a.hideEyeDrop, hideEyeDrop = _d === void 0 ? false : _d, _e = _a.hideAdvancedSliders, hideAdvancedSliders = _e === void 0 ? false : _e, _f = _a.hideColorGuide, hideColorGuide = _f === void 0 ? false : _f, _g = _a.hideInputType, hideInputType = _g === void 0 ? false : _g, _h = _a.hideColorTypeBtns, hideColorTypeBtns = _h === void 0 ? false : _h, _j = _a.hideGradientControls, hideGradientControls = _j === void 0 ? false : _j, _k = _a.hideGradientType, hideGradientType = _k === void 0 ? false : _k, _l = _a.hideGradientAngle, hideGradientAngle = _l === void 0 ? false : _l, _m = _a.hideGradientStop, hideGradientStop = _m === void 0 ? false : _m;
+    var locales = _a.locales, _d = _a.hideEyeDrop, hideEyeDrop = _d === void 0 ? false : _d, _e = _a.hideAdvancedSliders, hideAdvancedSliders = _e === void 0 ? false : _e, _f = _a.hideColorGuide, hideColorGuide = _f === void 0 ? false : _f, _g = _a.hideInputType, hideInputType = _g === void 0 ? false : _g, _h = _a.hideColorTypeBtns, hideColorTypeBtns = _h === void 0 ? false : _h, _j = _a.hideGradientControls, hideGradientControls = _j === void 0 ? false : _j, _k = _a.hideGradientType, hideGradientType = _k === void 0 ? false : _k, _l = _a.hideGradientAngle, hideGradientAngle = _l === void 0 ? false : _l, _m = _a.hideGradientStop, hideGradientStop = _m === void 0 ? false : _m, CustomGradientControls = _a.CustomGradientControls;
     var _o = (0, context_js_1.usePicker)(), config = _o.config, onChange = _o.onChange, isGradient = _o.isGradient, handleChange = _o.handleChange, previous = _o.previous, defaultStyles = _o.defaultStyles, pickerIdSuffix = _o.pickerIdSuffix;
     var defaultColor = config.defaultColor, defaultGradient = config.defaultGradient;
     var _p = (0, react_1.useState)(false), openComparibles = _p[0], setOpenComparibles = _p[1];
@@ -140,6 +140,7 @@ var Controls = function (_a) {
                         react_1.default.createElement(InputTypeDropdown, { openInputType: openInputType, setOpenInputType: setOpenInputType })))))),
             !hideAdvancedSliders && (react_1.default.createElement(AdvancedControls_js_1.default, { openAdvanced: openAdvanced })),
             !hideColorGuide && (react_1.default.createElement(ComparibleColors_js_1.default, { openComparibles: openComparibles })),
+            CustomGradientControls && react_1.default.createElement(CustomGradientControls, null),
             isGradient && !hideGradientControls && (react_1.default.createElement(GradientControls_js_1.default, { hideGradientType: hideGradientType, hideGradientAngle: hideGradientAngle, hideGradientStop: hideGradientStop }))));
     }
 };

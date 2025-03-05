@@ -4,5 +4,7 @@ export declare const Handle: ({ left, i, setDragging, }: {
     i: number;
     setDragging: (arg0: boolean) => void;
 }) => React.JSX.Element;
-declare const GradientBar: () => React.JSX.Element;
+declare const GradientBar: ({ width }: {
+    width?: number | null;
+}) => React.JSX.Element;
 export default GradientBar;

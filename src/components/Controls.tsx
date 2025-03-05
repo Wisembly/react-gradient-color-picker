@@ -8,7 +8,11 @@ import AdvancedControls from './AdvancedControls.js'
 import ComparibleColors from './ComparibleColors.js'
 import GradientControls from './GradientControls.js'
 import { LocalesProps } from '../shared/types.js'
-import { colorTypeBtnStyles, controlBtnStyles, modalBtnStyles } from '../styles/styles.js'
+import {
+  colorTypeBtnStyles,
+  controlBtnStyles,
+  modalBtnStyles,
+} from '../styles/styles.js'
 
 const ColorTypeBtns = ({
   hideColorTypeBtns,
@@ -139,6 +143,7 @@ const Controls = ({
   hideGradientType = false,
   hideGradientAngle = false,
   hideGradientStop = false,
+  CustomGradientControls,
 }: {
   locales?: LocalesProps
   hideEyeDrop?: boolean
@@ -150,9 +155,17 @@ const Controls = ({
   hideGradientType?: boolean
   hideGradientAngle?: boolean
   hideGradientStop?: boolean
+  CustomGradientControls?: React.ComponentType
 }) => {
-  const { config, onChange, isGradient, handleChange, previous, defaultStyles, pickerIdSuffix } =
-    usePicker()
+  const {
+    config,
+    onChange,
+    isGradient,
+    handleChange,
+    previous,
+    defaultStyles,
+    pickerIdSuffix,
+  } = usePicker()
   const { defaultColor, defaultGradient } = config
   const [openComparibles, setOpenComparibles] = useState(false)
   const [openInputType, setOpenInputType] = useState(false)
@@ -262,6 +275,7 @@ const Controls = ({
         {!hideColorGuide && (
           <ComparibleColors openComparibles={openComparibles} />
         )}
+        {CustomGradientControls && <CustomGradientControls />}
         {isGradient && !hideGradientControls && (
           <GradientControls
             hideGradientType={hideGradientType}
@@ -274,4 +288,4 @@ const Controls = ({
   }
 }
 
-export default Controls;
+export default Controls

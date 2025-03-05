@@ -67,10 +67,11 @@ export var Handle = function (_a) {
                 background: 'white',
             }, id: "rbgcp-gradient-handle-".concat(i, "-selected-dot").concat(pickerIdSuffix) })))));
 };
-var GradientBar = function () {
-    var _a = usePicker(), value = _a.value, colors = _a.colors, config = _a.config, squareWidth = _a.squareWidth, currentColor = _a.currentColor, handleGradient = _a.handleGradient, pickerIdSuffix = _a.pickerIdSuffix, createGradientStr = _a.createGradientStr;
+var GradientBar = function (_a) {
+    var width = _a.width;
+    var _b = usePicker(), value = _b.value, colors = _b.colors, config = _b.config, squareWidth = _b.squareWidth, currentColor = _b.currentColor, handleGradient = _b.handleGradient, pickerIdSuffix = _b.pickerIdSuffix, createGradientStr = _b.createGradientStr;
     var barSize = config.barSize;
-    var _b = useState(false), dragging = _b[0], setDragging = _b[1];
+    var _c = useState(false), dragging = _c[0], setDragging = _c[1];
     // const [inFocus, setInFocus] = useState<string | null>(null)
     function force90degLinear(color) {
         return color.replace(/(radial|linear)-gradient\([^,]+,/, 'linear-gradient(90deg,');
@@ -131,7 +132,7 @@ var GradientBar = function () {
         React.createElement("div", { style: {
                 height: 14,
                 borderRadius: 10,
-                width: squareWidth,
+                width: width !== null && width !== void 0 ? width : squareWidth,
                 backgroundImage: force90degLinear(value),
             }, onMouseDown: function (e) { return handleDown(e); }, onMouseMove: function (e) { return handleMove(e); }, id: "rbgcp-gradient-bar-canvas".concat(pickerIdSuffix) }), colors === null || colors === void 0 ? void 0 :
         colors.map(function (c, i) { return (React.createElement(Handle, { i: i, left: c.left, key: "".concat(i, "-").concat(c), setDragging: setDragging })); })));
