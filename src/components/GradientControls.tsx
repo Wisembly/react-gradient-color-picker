@@ -151,8 +151,13 @@ const DegreePicker = () => {
 }
 
 const DeleteBtn = () => {
-  const { colors, selectedColor, createGradientStr, defaultStyles, pickerIdSuffix } =
-    usePicker()
+  const {
+    colors,
+    selectedColor,
+    createGradientStr,
+    defaultStyles,
+    pickerIdSuffix,
+  } = usePicker()
 
   const deletePoint = () => {
     if (colors?.length > 2) {

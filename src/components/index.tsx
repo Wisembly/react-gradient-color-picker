@@ -36,6 +36,7 @@ export function ColorPicker({
   hidePickerSquare = false,
   showHexAlpha = false,
   config = {},
+  children,
 }: ColorPickerProps) {
   const safeValue = objectToString(value)
   const isDarkMode =
@@ -90,6 +91,7 @@ export function ColorPicker({
           hidePickerSquare={hidePickerSquare}
           locales={locales}
         />
+        {children && children}
       </PickerContextWrapper>
     </div>
   )
