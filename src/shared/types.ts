@@ -27,6 +27,7 @@ export type ColorPickerProps = {
   hidePickerSquare?: boolean
   showHexAlpha?: boolean
   config?: PassedConfig
+  CustomGradientControls?: React.ComponentType
 }
 
 export type ColorsProps = {

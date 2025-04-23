@@ -27,11 +27,15 @@ const Picker = ({
   hideColorTypeBtns,
   hideAdvancedSliders,
   hideGradientControls,
+  CustomGradientControls,
 }: PickerProps) => {
   const { isGradient, pickerIdSuffix } = usePicker()
 
   return (
-    <div style={{ userSelect: 'none' }} id={`rbgcp-color-picker${pickerIdSuffix}`}>
+    <div
+      style={{ userSelect: 'none' }}
+      id={`rbgcp-color-picker${pickerIdSuffix}`}
+    >
       {!hidePickerSquare && <Square />}
       {!hideControls && (
         <Controls
@@ -45,6 +49,7 @@ const Picker = ({
           hideGradientAngle={hideGradientAngle}
           hideAdvancedSliders={hideAdvancedSliders}
           hideGradientControls={hideGradientControls}
+          CustomGradientControls={CustomGradientControls}
         />
       )}
       {isGradient && <GradientBar />}
@@ -76,4 +81,5 @@ type PickerProps = {
   hideGradientControls?: boolean
   locales?: LocalesProps
   hidePickerSquare?: boolean
+  CustomGradientControls?: React.ComponentType
 }

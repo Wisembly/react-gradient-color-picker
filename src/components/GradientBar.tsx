@@ -92,7 +92,7 @@ export const Handle = ({
   )
 }
 
-const GradientBar = () => {
+const GradientBar = ({ width }: { width?: number | null }) => {
   const {
     value,
     colors,
@@ -135,7 +135,7 @@ const GradientBar = () => {
   }
 
   const handleDown = (e: any) => {
-    if (dragging) return;
+    if (dragging) return
     addPoint(e)
     setDragging(true)
   }
@@ -183,7 +183,7 @@ const GradientBar = () => {
         style={{
           height: 14,
           borderRadius: 10,
-          width: squareWidth,
+          width: width ?? squareWidth,
           backgroundImage: force90degLinear(value),
         }}
         onMouseDown={(e) => handleDown(e)}

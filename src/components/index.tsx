@@ -36,6 +36,7 @@ export function ColorPicker({
   hidePickerSquare = false,
   showHexAlpha = false,
   config = {},
+  CustomGradientControls,
 }: ColorPickerProps) {
   const safeValue = objectToString(value)
   const isDarkMode =
@@ -89,6 +90,7 @@ export function ColorPicker({
           hideGradientControls={hideGradientControls}
           hidePickerSquare={hidePickerSquare}
           locales={locales}
+          CustomGradientControls={CustomGradientControls}
         />
       </PickerContextWrapper>
     </div>
